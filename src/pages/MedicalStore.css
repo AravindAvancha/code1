@@ -1,0 +1,179 @@
+/* Styling for the Medical Store Page */
+.medical-store-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.highlight-text {
+  color: orange;
+}
+
+.sub-text {
+  color: #684FA4;
+}
+
+.description-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.product-container {
+  display: flex;              /* Enable flexbox */
+  justify-content: center;    /* Center items horizontally */
+  align-items: center;        /* Center items vertically */
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: 20px;           /* Add spacing from the top */
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* Space between the cards */
+  justify-items: center; /* Center cards horizontally within each grid cell */
+}
+
+.item-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-10px);
+}
+
+.item-image {
+  width: 100%;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #684FA4;
+}
+
+.item-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Remove underline from links in item cards */
+.item-link {
+  text-decoration: none;  /* Remove underline */
+  color: inherit;         /* Inherit color from the parent */
+}
+
+.back-button {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  color: #5836a7;
+  font-weight: bold;
+  border: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center; /* Vertically center icon and text */
+  gap: 5px; /* Adds spacing between icon and text */
+  margin-top: 40px;
+  text-decoration: underline;
+}
+
+.back-button:hover {
+  color: #F7961E; /* Changes text and icon color to orange on hover */
+}
+
+.back-button i {
+  font-size: 20px; /* Icon size */
+}
+
+.back-button::before {
+  margin-right: 8px;
+  font-size: 25px; /* Matches font size of text */
+  text-decoration: none !important; /* Explicitly remove underline from the arrow */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's on top of other content */
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem; /* Smaller heading font size for mobile */
+    margin-top: 79px;
+  }
+
+  .item-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
+  }
+
+  .product-container {
+    padding: 10px; /* Less padding on mobile */
+  }
+
+  .item-image {
+    height: 100px; /* Adjust image height for mobile */
+  }
+
+  .item-name {
+    font-size: 0.9rem; /* Smaller item name font size */
+  }
+
+  .item-description {
+    font-size: 0.9rem; /* Smaller description font size */
+  }
+
+  .back-button {
+    top: 10px; /* Adjust back button position on mobile */
+    right: 20px; /* Adjust back button position */
+  }
+}
+
+/* Extra small devices (portrait phones, less than 480px) */
+@media screen and (max-width: 480px) {
+  .item-grid {
+    grid-template-columns: 1fr; /* Single card per row on small screens */
+  }
+
+  .heading {
+    font-size: 1.3rem; /* Even smaller heading font size */
+  }
+
+  .product-container {
+    padding: 5px; /* Even less padding for very small screens */
+  }
+
+  .back-button {
+    top: 10px;
+    right: 10px; /* Position the back button on the top-left of small screens */
+  }
+}
